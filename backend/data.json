@@ -1,0 +1,26 @@
+{
+  "monthlyBudget": 1000,
+  "expenses": [
+    {
+      "id": 1,
+      "description": "Épicerie",
+      "amount": 50,
+      "category": "Nourriture",
+      "date": "2026-10-01"
+    },
+    {
+      "id": 2,
+      "description": "Abonnement de transport",
+      "amount": 100,
+      "category": "Transport",
+      "date": "2026-10-02"
+    },
+    {
+      "id": 3,
+      "description": "Livres de cours",
+      "amount": 200,
+      "category": "Études",
+      "date": "2026-10-03"
+    }
+  ]
+}
