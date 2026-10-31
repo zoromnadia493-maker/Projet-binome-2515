@@ -4,9 +4,8 @@
  * Code fourni ou adapté avec l’aide de l’IA : environ 45 %.
  * Estimation hors dépendances.
  */
-{ useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
-
 const API = 'http://localhost:3001/api';
 
 const categories = [
