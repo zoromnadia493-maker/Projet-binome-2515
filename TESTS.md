@@ -1,36 +1,38 @@
 # Tests manuels — Student Budget Tracker
 
-Les tests ont été faits avec le backend sur le port 3001
+Les tests ont été réalisés avec le backend sur le port 3001
 et le frontend sur le port 5173.
 
-## Vérifications réalisées
+## Tests du backend
 
-| Test | Action | Résultat observé |
-| --- | --- | --- |
-| Consulter les dépenses | Ouvrir /api/expenses | Les dépenses sont retournées en JSON. |
-| Consulter le budget | Ouvrir /api/budget | Le serveur retourne monthlyBudget égal à 1000. |
-| Consulter une dépense | Ouvrir /api/expenses/1 | La dépense Épicerie est affichée. |
-| Ajouter depuis l’API | Envoyer une requête POST avec « Test café » et un montant de 5 | La dépense est créée avec l’identifiant 4. |
-| Modifier depuis l’API | Envoyer une requête PUT pour changer le montant à 8 | La modification a été confirmée pendant les essais. |
-| Charger les données dans React | Ouvrir le frontend avec le backend démarré | Les dépenses du backend s’affichent dans l’interface. |
-| Afficher l’interface mise à jour | Ouvrir la nouvelle version de l’application | L’affichage a été confirmé après le remplacement de App.jsx. |
+| Test | Action | Résultat observé | État |
+| --- | --- | --- | --- |
+| Consulter les dépenses | Ouvrir /api/expenses | Les dépenses sont retournées en JSON. | Réussi |
+| Consulter le budget | Ouvrir /api/budget | Le budget enregistré est retourné en JSON. | Réussi |
+| Consulter une dépense | Ouvrir /api/expenses/1 | La dépense Épicerie est affichée. | Réussi |
+| Ajouter une dépense | Envoyer une requête POST avec « Test café » et un montant de 5 | La dépense est créée avec un identifiant. | Réussi |
+| Modifier une dépense | Envoyer une requête PUT pour changer son montant à 8 | Le montant est modifié. | Réussi |
+| Identifiant inexistant | Demander une dépense avec un identifiant absent | Le serveur retourne une erreur 404. | Réussi |
 
-## Vérifications restant à faire
+## Tests de l’application
 
-Ces résultats ne sont pas encore confirmés.
+| Test | Action | Résultat observé | État |
+| --- | --- | --- | --- |
+| Charger les données | Ouvrir l’application avec le backend démarré | Le budget et les dépenses du JSON s’affichent. | Réussi |
+| Ajouter une dépense | Remplir le formulaire et cliquer sur Add Expense | La dépense apparaît dans la liste et dans data.json. Les totaux sont mis à jour. | Réussi |
+| Modifier une dépense | Cliquer sur Edit, changer le montant et enregistrer | La modification est enregistrée et les totaux sont recalculés. | Réussi |
+| Supprimer une dépense | Cliquer sur Delete et confirmer | La dépense disparaît de la liste et du JSON. Les totaux sont recalculés. | Réussi |
+| Modifier le budget | Entrer un nouveau montant et cliquer sur Save Budget | Le budget est enregistré et le solde est recalculé. | Réussi |
+| Rechercher | Saisir une partie de la description | Seules les dépenses correspondantes s’affichent. | Réussi |
+| Filtrer par catégorie | Choisir une catégorie | Seules les dépenses de cette catégorie s’affichent. Les totaux globaux restent inchangés. | Réussi |
+| Dépasser le budget | Enregistrer un budget inférieur aux dépenses | Le solde devient négatif et un avertissement apparaît. | Réussi |
+| Refuser un montant invalide | Essayer d’ajouter une dépense avec un montant négatif | La saisie est refusée et aucune dépense n’est ajoutée. | Réussi |
+| Conserver les données | Enregistrer une dépense, arrêter les serveurs, les relancer et recharger la page | La dépense enregistrée est toujours présente. | Réussi |
 
-| Test | Action | Résultat attendu |
-| --- | --- | --- |
-| Ajouter depuis React | Ajouter une dépense avec tous les champs | La dépense apparaît dans la liste et dans data.json. |
-| Modifier depuis React | Cliquer sur Edit, changer le montant et enregistrer | La dépense et les totaux sont mis à jour. |
-| Supprimer | Cliquer sur Delete et confirmer | La dépense disparaît de la liste et du JSON. |
-| Modifier le budget | Entrer un nouveau budget et cliquer sur Save Budget | Le budget et le solde sont mis à jour et enregistrés. |
-| Rechercher | Saisir une partie d’une description | Seules les dépenses correspondantes s’affichent. |
-| Filtrer | Choisir une catégorie | Seules les dépenses de cette catégorie s’affichent, sans changer les totaux globaux. |
-| Dépasser le budget | Enregistrer un budget inférieur au total des dépenses | Le solde devient négatif et un avertissement apparaît. |
-| Refuser une saisie invalide | Essayer d’ajouter une dépense avec un montant négatif | La saisie est refusée et aucune dépense n’est enregistrée. |
-| Identifiant inexistant | Ouvrir /api/expenses/999999 | Le serveur retourne une erreur 404 si cet identifiant n’existe pas. |
-| Conserver les données | Ajouter une dépense, arrêter les serveurs, les relancer et recharger la page | La dépense est toujours présente. |
+## Bilan
 
-Les vérifications restantes seront mises à jour avec les
-résultats réellement observés avant la remise finale.
+Les tests manuels ci-dessus ont donné les résultats attendus.
+Ils couvrent les principales fonctions de l’application.
+
+Ces vérifications sont manuelles et ne constituent pas
+des tests automatisés.
