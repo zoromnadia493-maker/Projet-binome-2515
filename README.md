@@ -1,4 +1,4 @@
-# React + Vite
+
 # Student Budget Tracker
 
 Projet en binôme — SED2515
