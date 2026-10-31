@@ -1,4 +1,10 @@
-import { useEffect, useState } from 'react';
+/*
+ * Frontend — Nadia Zorom
+ * Code écrit personnellement : environ 55 %.
+ * Code fourni ou adapté avec l’aide de l’IA : environ 45 %.
+ * Estimation hors dépendances.
+ */
+{ useEffect, useState } from 'react';
 import './App.css';
 
 const API = 'http://localhost:3001/api';
