@@ -4,7 +4,7 @@
  * Code fourni ou adapté avec l’aide de l’IA : environ 40 %.
  * Estimation hors dépendances.
  */
-express = require("express");
+const express = require("express");
 const cors = require("cors");
 const fs = require("node:fs");
 const path = require("node:path");
